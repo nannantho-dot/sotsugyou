@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>日記を書く</title>
+  <link rel="stylesheet" href="css/common.css">
+  <link rel="stylesheet" href="css/edit.css">
+</head>
+<body>
+<div class="diary-wrapper">
+  <h2>
+    <button onclick="moveDate(-1)">◀</button>
+    <span id="dateHeading"></span>
+    <button onclick="moveDate(1)">▶</button>
+  </h2>
+
+
+    <div class="diary-form">
+      <input type="text" id="title" placeholder="タイトル">
+
+      <!-- 顔文字と天気表示を横並びに -->
+      <div class="weather-row">
+        <select id="emojiSelector">
+          <option value="">🙂 まぁまぁ</option>
+          <option value="😊">😊 いい感じ</option>
+          <option value="😢">😢 悲しい</option>
+          <option value="😠">😠 ムカつく</option>
+          <option value="😴">😴 疲れた</option>
+          <option value="😎">😎 ハッピー</option>
+          <option value="🤔">🤔 悩み中</option>
+        </select>
+
+        <div id="weatherDisplay"></div>
+      </div>
+
+      <textarea id="content" placeholder="本文" maxlength="200"></textarea>
+      <p id="charCount">0 / 200 文字</p>
+
+      <div class="button-row">
+        <button type="button" onclick="saveDiary()">保存</button>
+        <button onclick="deleteDiary()">削除</button>
+      </div>
+
+      <p id="status"></p>
+      <button onclick="goBack()">カレンダーに戻る</button>
+    </div>
+  </div>
+
+  <div id="confirmModal" class="modal">
+  <div class="modal-content">
+    <p>この日記を削除しますか？</p>
+    <div class="modal-buttons">
+      <button id="confirmYes">はい</button>
+      <button id="confirmNo">いいえ</button>
+    </div>
+  </div>
+</div>
+
+  <script src="edit.js"></script>
+</body>
+</html>

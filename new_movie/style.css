@@ -1,0 +1,84 @@
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #121212;
+  color: #fff;
+  margin: 0;
+  padding: 20px;
+}
+
+.container {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+#search {
+  width: 100%;
+  padding: 10px;
+  border-radius: 8px;
+  border: none;
+  margin-bottom: 20px;
+  font-size: 16px;
+}
+
+.movie-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 16px;
+}
+
+.movie-card {
+  background-color: #1f1f1f;
+  border-radius: 8px;
+  overflow: hidden;
+  text-align: center;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+  position: relative; /* 🚫マークを重ねるため */
+}
+
+.movie-card img {
+  width: 100%;
+  height: 270px;
+  object-fit: cover;
+  transition: transform 0.3s;
+}
+
+.movie-card h2 {
+  font-size: 16px;
+  margin: 10px 0 4px;
+}
+
+.movie-card p {
+  color: #aaa;
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+
+/* 🚫マーク（公式サイトなし映画用） */
+.movie-card a[href="#"]::after {
+  content: "🚫";
+  position: absolute;
+  top: 35%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 72px; /* ← 大きめサイズに変更 */
+  color: rgba(255, 0, 0, 0.85);
+  text-shadow: 0 0 10px rgba(0,0,0,0.8);
+  opacity: 0;
+  transition: opacity 0.3s;
+  pointer-events: none; /* クリックを邪魔しない */
+}
+
+/* ホバー時に中央に表示 */
+.movie-card a[href="#"]:hover::after {
+  opacity: 1;
+}
+
+/* 公式サイトあり映画は拡大アニメーション */
+.movie-card a:not([href="#"]) img:hover {
+  transform: scale(1.05);
+}

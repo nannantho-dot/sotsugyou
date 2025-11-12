@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>カレンダー</title>
+  <link rel="stylesheet" href="css/common.css">
+  <link rel="stylesheet" href="css/calendar.css">
+</head>
+<body>
+  <div class="calendar-wrapper">
+    <h2>ちょっとだけ日誌</h2>
+
+    <div id="calendar">
+      <div class="calendar-header">
+        <button onclick="changeMonth(-1)">← 前月</button>
+        <h3 id="calendar-title">2025年 10月</h3>
+        <button onclick="changeMonth(1)">次月 →</button>
+      </div>
+      <div id="calendar-body"></div>
+    </div>
+  
+
+  <button onclick="logout()" id="logout-button">ログアウト</button>
+  </div>
+  <script src="calendar.js"></script>
+</body>
