@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="ja">
 <head>
@@ -5,20 +6,25 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>今月公開映画リスト</title>
   <link rel="stylesheet" href="style.css" />
+  <script
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCY0yVt6tWzbvcgIsax9sOmQKQYViqRkp0&libraries=places"
+    async defer
+  ></script>
 </head>
 <body>
   <div class="container">
     <h1>🎬 今月公開の映画 🎬</h1>
     <input type="text" id="search" placeholder="タイトルで検索..." />
-
-  <div id="month-buttons" style="text-align:center; margin-bottom:20px;">
-  <button id="this-month">今月</button>
-  <button id="next-month">次月</button>
-  </div>
-  
+    <div id="month-buttons" style="text-align:center; margin-bottom:20px;">
+      <button id="this-month">今月</button>
+      <button id="next-month">次月</button>
+    </div>
     <div id="movie-list" class="movie-grid"></div>
   </div>
 
-  <script src="script.js"></script>
+  <button id="find-cinemas">近くの映画館を探す</button>
+  <div id="cinema-list"></div>
+
+  <script src="2.js"></script>
 </body>
 </html>
